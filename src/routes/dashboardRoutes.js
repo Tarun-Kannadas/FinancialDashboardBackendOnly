@@ -9,7 +9,7 @@ const {
 const auth = require("../middleware/authMiddleware");
 const allowRoles = require("../middleware/roleMiddleware");
 
-router.get("/summary", auth, allowRoles("analyst", "admin"), getSummary);
-router.get("/trends", auth, allowRoles("analyst", "admin"), getTrends);
+router.get("/summary", auth, allowRoles("analyst", "admin", "viewer"), getSummary);
+router.get("/trends", auth, allowRoles("analyst", "admin", "viewer"), getTrends);
 
 module.exports = router;

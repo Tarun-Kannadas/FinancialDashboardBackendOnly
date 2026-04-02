@@ -13,7 +13,7 @@ const allowRoles = require("../middleware/roleMiddleware");
 
 router.post("/", auth, allowRoles("admin"), createRecord);
 
-router.get("/", auth, allowRoles("analyst", "admin"), getRecords);
+router.get("/", auth, allowRoles("analyst", "admin", "viewer"), getRecords);
 
 router.put("/:id", auth, allowRoles("admin"), updateRecord);
 
